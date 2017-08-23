@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/style.css') }}" />
+    <title>Your Workout Program</title>
+  </head>
+  <body>
+    <h1>Your Workout Program</h1>
+      <h3>Week 1</h3>
+        <h4>Day 1</h4>
+          {% for line in out1 %}
+            <p> {{ line }} </P>
+          {% endfor %}
+        <h4>Day 2</h4>
+          {% for line in out2 %}
+            <p> {{ line }} </P>
+          {% endfor %}
+        <h4>Day 3</h4>
+          {% for line in out3 %}
+            <p> {{ line }} </P>
+          {% endfor %}
+
+      <h3>Week 2</h3>
+        <h4>Day 1</h4>
+          {% for line in out4 %}
+            <p> {{ line }} </P>
+          {% endfor %}
+        <h4>Day 2</h4>
+          {% for line in out5 %}
+            <p> {{ line }} </P>
+          {% endfor %}
+        <h4>Day 3</h4>
+          {% for line in out6 %}
+            <p> {{ line }} </P>
+          {% endfor %}
+
+      <h3>Week 3</h3>
+        <h4>Day 1</h4>
+          {% for line in out7 %}
+            <p> {{ line }} </P>
+          {% endfor %}
+        <h4>Day 2</h4>
+          {% for line in out8 %}
+            <p> {{ line }} </P>
+          {% endfor %}
+        <h4>Day 3</h4>
+          {% for line in out9 %}
+            <p> {{ line }} </P>
+          {% endfor %}
+
+      <h3>Week 4</h3>
+        <h4>Day 1</h4>
+          {% for line in out10 %}
+            <p> {{ line }} </P>
+          {% endfor %}
+        <h4>Day 2</h4>
+          {% for line in out11 %}
+            <p> {{ line }} </P>
+          {% endfor %}
+        <h4>Day 3</h4>
+          {% for line in out12 %}
+            <p> {{ line }} </P>
+          {% endfor %}
+
+      <h3>Week 5</h3>
+        <h4>Day 1</h4>
+          {% for line in out13 %}
+            <p> {{ line }} </P>
+          {% endfor %}
+        <h4>Day 2</h4>
+          {% for line in out14 %}
+            <p> {{ line }} </P>
+          {% endfor %}
+        <h4>Day 3</h4>
+          {% for line in out15 %}
+            <p> {{ line }} </P>
+          {% endfor %}
+
+  </body>
+</html>
+
