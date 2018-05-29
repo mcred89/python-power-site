@@ -34,12 +34,12 @@ def mainliftwrite(vweek, day, percentages, msq, mbe, mdl,
 
 def workoutscript(msq, mbe, mdl, mainliftchoice):
     warmups = {
-        1: ["Barbell Overhead Squat x 30",
-            "Goblet Squat x 30", "Lunges x 30"],
-        2: ["50 LB KB Press x 15(each arm)",
-            "Pushups x 30", "Barbell Overhead x 30"],
-        3: ["2H KB Swing x 30", "Barbell Front Squat x 30",
-            "Goblet Squat x 30", "Kettlebell DL x30"]
+        "1": ["Barbell Overhead Squat x 30",
+              "Goblet Squat x 30", "Lunges x 30"],
+        "2": ["50 LB KB Press x 15(each arm)",
+              "Pushups x 30", "Barbell Overhead x 30"],
+        "3": ["2H KB Swing x 30", "Barbell Front Squat x 30",
+              "Goblet Squat x 30", "Kettlebell DL x30"]
     }
     percentages = {
         "hivol": {
@@ -68,6 +68,7 @@ def workoutscript(msq, mbe, mdl, mainliftchoice):
                 warmup(vweek, day, warmups, outputs)
                 mainliftwrite(vweek, day, percentages, msq, mbe, mdl,
                               mainliftchoice, outputs)
+        print str(outputs)
         return outputs
     except ValueError:
         pass

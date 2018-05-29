@@ -1,5 +1,17 @@
 # WorkoutGenerator
 
-A little side project to get my hands dirty with dynamic websites. Currently in the "I don't care if it's ugly; just make it work" stage. 
+Deploy to aws with Zapps:
+Set up your aws cli:
+> pip install awscli
+> aws config
+
+Set up your virtual environemnt:
+> cd /project/dir
+> virtualenv venv
+> pip install -r requirements.txt
+
+Deploy or update the site:
+> zappa deploy prod
+> zappa update prod
 
 The site in action: http://themcilroy.com/

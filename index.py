@@ -3,12 +3,12 @@ from flask import *
 app = Flask(__name__)
 
 
-@app.route("/")
+@app.route("/", methods=['GET', 'POST'])
 def pagecreate():
   return render_template('index.html')
 
 
-@app.route("/workout", methods=['POST'])
+@app.route("/workout", methods=['GET', 'POST'])
 def workoutcreate():
   try:
     msq = float(request.form['msq'])
@@ -21,8 +21,8 @@ def workoutcreate():
   if request.form['mainliftchoice'] == 'False':
     mainliftchoice = "lowvol"
   from workout import *
-  workoutscript(msq, mbe, mdl, mainliftchoice)
-  return render_template('output.html', outputs)
+  outputs = workoutscript(msq, mbe, mdl, mainliftchoice)
+  return render_template('output.html', outputs=outputs)
 
 
 if __name__ == "__main__":
