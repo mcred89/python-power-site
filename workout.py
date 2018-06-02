@@ -12,24 +12,25 @@ def mainliftwrite(vweek, day, percentages, msq, mbe, mdl,
                   mainliftchoice, outputs):
     percentage = percentages[mainliftchoice]["week" + vweek]["percent"]
     reprange = percentages[mainliftchoice]["week" + vweek]["reprange"]
-    if day == 1:
+    if day == '1':
         outputs["week" + vweek]["day" + day].append(
             "     Squat: {0}lbs {1}".format(
                 (int(5 * round((msq * percentage) / 5))), reprange))
-    if day == 2:
+    if day == '2':
         outputs["week" + vweek]["day" + day].append(
             "     Press: {0}lbs {1}".format(
                 (int(5 * round((mbe * percentage) / 5))), reprange))
         outputs["week" + vweek]["day" + day].append(
             "     Floor Press: {0}lbs 3x8".format(
                 (int(5 * round((mbe * .75) / 5)))))
-    if day == 3:
+    if day == '3':
         outputs["week" + vweek]["day" + day].append(
             "     Deadlift: {0}lbs {1}".format(
                 (int(5 * round((mdl * percentage) / 5))), reprange))
         outputs["week" + vweek]["day" + day].append(
             "     Bent Over Row: {0}lbs 3x5".format(
                 (int(5 * round((mdl * .4) / 5)))))
+    return outputs
 
 
 def workoutscript(msq, mbe, mdl, mainliftchoice):
