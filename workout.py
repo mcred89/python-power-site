@@ -34,6 +34,8 @@ def mainliftwrite(vweek, day, percentages, msq, mbe, mdl,
 
 
 def workoutscript(msq, mbe, mdl, mainliftchoice):
+    print("Called with msq:{} mbe:{} mdl:{} mainliftchoice:{}".format(
+        msq, mbe, mdl, mainliftchoice))
     warmups = {
         "1": ["Barbell Overhead Squat x 30",
               "Goblet Squat x 30", "Lunges x 30"],
@@ -43,19 +45,19 @@ def workoutscript(msq, mbe, mdl, mainliftchoice):
               "Goblet Squat x 30", "Kettlebell DL x30"]
     }
     percentages = {
-        "hivol": {
+        "high": {
             "week1": {"percent": .55, "reprange": "5x10"},
             "week2": {"percent": .6, "reprange": "5x9"},
             "week3": {"percent": .65, "reprange": "5x8"},
             "week4": {"percent": .7, "reprange": "5x7"},
             "week5": {"percent": .75, "reprange": "5x6"}
         },
-        "lowvol": {
-            "week1": {"percent": .65, "reprange": "5x10"},
-            "week2": {"percent": .7, "reprange": "5x9"},
-            "week3": {"percent": .75, "reprange": "5x8"},
-            "week4": {"percent": .8, "reprange": "5x7"},
-            "week5": {"percent": .85, "reprange": "5x6"}
+        "low": {
+            "week1": {"percent": .65, "reprange": "5x6"},
+            "week2": {"percent": .7, "reprange": "5x5"},
+            "week3": {"percent": .75, "reprange": "5x4"},
+            "week4": {"percent": .8, "reprange": "5x3"},
+            "week5": {"percent": .85, "reprange": "5x2"}
         }
     }
     outputs = {}

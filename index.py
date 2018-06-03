@@ -16,10 +16,7 @@ def workoutcreate():
     mdl = float(request.form['mdl'])
   except:
     return render_template('error.html')
-  if request.form['mainliftchoice'] == 'True':
-    mainliftchoice = "hivol"
-  if request.form['mainliftchoice'] == 'False':
-    mainliftchoice = "lowvol"
+  mainliftchoice = str(request.form['mainliftchoice'])
   from workout import *
   outputs = workoutscript(msq, mbe, mdl, mainliftchoice)
   return render_template('output.html', outputs=outputs)
