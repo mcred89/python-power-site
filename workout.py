@@ -53,11 +53,11 @@ def workoutscript(msq, mbe, mdl, mainliftchoice):
             "week5": {"percent": .75, "reprange": "5x6"}
         },
         "low": {
-            "week1": {"percent": .65, "reprange": "5x6"},
-            "week2": {"percent": .7, "reprange": "5x5"},
-            "week3": {"percent": .75, "reprange": "5x4"},
-            "week4": {"percent": .8, "reprange": "5x3"},
-            "week5": {"percent": .85, "reprange": "5x2"}
+            "week1": {"percent": .65, "reprange": "4x6"},
+            "week2": {"percent": .7, "reprange": "4x5"},
+            "week3": {"percent": .75, "reprange": "4x4"},
+            "week4": {"percent": .8, "reprange": "4x3"},
+            "week5": {"percent": .85, "reprange": "4x2"}
         }
     }
     outputs = {}
