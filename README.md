@@ -8,15 +8,15 @@ Deploy to aws with Zappa:
 > aws config
 
 Set up your virtual environemnt:
+> pip install pipenv
+
 > cd /project/dir
 
-> virtualenv venv
-
-> . venv/Scripts/activate
-
-> pip install -r requirements.txt
+> pipenv install
 
 Deploy or update the site:
+> pipenv shell
+
 > zappa deploy prod
 
 > zappa update prod
