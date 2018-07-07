@@ -71,7 +71,6 @@ def workoutscript(msq, mbe, mdl, mainliftchoice):
                 warmup(vweek, day, warmups, outputs)
                 mainliftwrite(vweek, day, percentages, msq, mbe, mdl,
                               mainliftchoice, outputs)
-        print str(outputs)
         return outputs
     except ValueError:
         pass

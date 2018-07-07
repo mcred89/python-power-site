@@ -36,5 +36,3 @@ Tear it all down with:
 > zappa undeploy
 
 The site in action: https://themcilroy.com/
-
-testing
