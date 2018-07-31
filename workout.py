@@ -22,7 +22,7 @@ def mainliftwrite(vweek, day, percentages, msq, mbe, mdl,
                 (int(5 * round((mbe * percentage) / 5))), reprange))
         outputs["week" + vweek]["day" + day].append(
             "     Curls: {0}lbs 3x8".format(
-                (int(5 * round((mbe * .33) / 5)))))
+                (int(5 * round((mbe * .4) / 5)))))
     if day == '3':
         outputs["week" + vweek]["day" + day].append(
             "     Deadlift: {0}lbs {1}".format(
