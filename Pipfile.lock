@@ -32,17 +32,17 @@
         },
         "boto3": {
             "hashes": [
-                "sha256:43255355cb4ad0fcba178658073120107695a6258259d4a5d387c0cb8354b928",
-                "sha256:d5413b68157d73515839c6b1bbc00c0a9b0722ce8b14475215cf68984003f82b"
+                "sha256:37853caa02f7141d7b1fb2537cc878bc58d2b1386224e3cf551af7f6ae3e4893",
+                "sha256:d0d849de20c938519df29e52d64210b408a67a20491e1e7d151588a60deef488"
             ],
-            "version": "==1.7.52"
+            "version": "==1.7.70"
         },
         "botocore": {
             "hashes": [
-                "sha256:5e809e326564d1b6422b0c7235300da428601e6694c8e7d7f05e38329fe40e31",
-                "sha256:a4acb24c8ba2fb148e41b385e8acd10c5d96bf576ad22be1364919bed6f74f4e"
+                "sha256:58b469e347865277e9713326709949f427f312eb9f64e5703de7128a6a90a5ad",
+                "sha256:7a3759d346bf297d33091a4c154d3c50f0c3dc7b428badb6c950f87ea390e5b1"
             ],
-            "version": "==1.10.52"
+            "version": "==1.10.70"
         },
         "certifi": {
             "hashes": [
@@ -104,7 +104,7 @@
                 "sha256:9ec02aa7d674acb8618afb127e27fde7fc68994c0437ad759fa094a574adb265",
                 "sha256:ec0a6cb848cc212002b9828c3e34c675e0c9ff6741dc445cab6fdd4e1085d1f1"
             ],
-            "markers": "python_version < '3' and python_version >= '2.6'",
+            "markers": "python_version == '2.6' or python_version == '2.7'",
             "version": "==3.2.0"
         },
         "hjson": {
@@ -271,11 +271,11 @@
         },
         "zappa": {
             "hashes": [
-                "sha256:cb70195801efb8ae50c78d5180640afe1bcb9317d3c11da97b6d3588b90aea89",
-                "sha256:d841b2ca57c80c2fe5cd9098763ab26f59580658838eb77fcdefeed894543d45"
+                "sha256:6b303a82698035d465e3426008a355b17733204c205e6efab7b4168ac84eb918",
+                "sha256:b4d310821d19c773f9d1457fa00287c154097c72e502d71f0879cb765a2130b4"
             ],
             "index": "pypi",
-            "version": "==0.46.1"
+            "version": "==0.46.2"
         }
     },
     "develop": {}
