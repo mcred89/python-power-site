@@ -1,4 +1,4 @@
-from flask import *
+from flask import Flask, render_template, request
 
 app = Flask(__name__)
 
@@ -17,7 +17,7 @@ def workoutcreate():
   except:
     return render_template('error.html')
   mainliftchoice = str(request.form['mainliftchoice'])
-  from workout import *
+  from workout import workoutscript
   outputs = workoutscript(msq, mbe, mdl, mainliftchoice)
   return render_template('output.html', outputs=outputs)
 
