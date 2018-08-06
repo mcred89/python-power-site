@@ -30,5 +30,7 @@ class MaxesForm(FlaskForm):
     mdl = IntegerField('Max Deadlift',
                         validators=[DataRequired(), Length(min=2, max=4)])
     mainliftchoice = RadioField('Volume',
-                                choices=[('high', 'High'),('low', 'Low')])
+                                choices=[('high', 'High'),('low', 'Low')],
+                                validators=[DataRequired()]
+                                )
     submit = SubmitField('Submit')

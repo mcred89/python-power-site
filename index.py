@@ -33,9 +33,11 @@ def workoutcreate():
     msq = float(form.msq.data)
     mbe = float(form.mbe.data)
     mdl = float(form.mdl.data)
+    mainliftchoice = form.mainliftchoice.data
+    if mainliftchoice == 'None':
+      mainliftchoice = "high"
   except:
     return render_template('error.html')
-  mainliftchoice = form.mainliftchoice.data
   from workout import workoutscript
   outputs = workoutscript(msq, mbe, mdl, mainliftchoice)
   return render_template('output.html', outputs=outputs, form=form)
