@@ -5,6 +5,11 @@
         "profile_name": null,
         "project_name": "workoutgenerator",
         "runtime": "python3.6",
+        "environment_variables": {
+            "ENV_SECRET_NAME": "workoutgenerator/secretkey",
+            "ENV_SECRET_KEY": "WORKOUT_GEN_KEY",
+            "ENV_REGION": "us-east-2"
+        },
         "s3_bucket": "zappa-workout-prod",
         "domain": "themcilroy.com",
         "route53_enabled": true,
@@ -16,6 +21,11 @@
         "profile_name": null,
         "project_name": "workoutgenerator",
         "runtime": "python3.6",
+        "environment_variables": {
+            "ENV_SECRET_NAME": "workoutgenerator/secretkey",
+            "ENV_SECRET_KEY": "WORKOUT_GEN_KEY",
+            "ENV_REGION": "us-east-2"
+        },
         "s3_bucket": "zappa-workout-dev",
         "domain": "dev.themcilroy.com",
         "route53_enabled": true,
