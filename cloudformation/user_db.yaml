@@ -1,0 +1,10 @@
+# https://aws.amazon.com/blogs/database/how-to-use-aws-cloudformation-to-configure-auto-scaling-for-amazon-dynamodb-tables-and-indexes/
+AWSTemplateFormatVerions: 2010-09-09
+Description: Creates the AWS DynamoDB User Table for the Workout Generator app
+
+Outputs:
+
+
+Resources:
+  UserTable:
+
