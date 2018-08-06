@@ -10,6 +10,11 @@
             "ENV_SECRET_KEY": "WORKOUT_GEN_KEY",
             "ENV_REGION": "us-east-2"
         },
+        "extra_permissions": [{
+            "Effect": "Allow",
+            "Action": ["secretsmanager:GetSecretValue"],
+            "Resource": "*"
+        }],
         "s3_bucket": "zappa-workout-prod",
         "domain": "themcilroy.com",
         "route53_enabled": true,
@@ -26,6 +31,11 @@
             "ENV_SECRET_KEY": "WORKOUT_GEN_KEY",
             "ENV_REGION": "us-east-2"
         },
+        "extra_permissions": [{
+            "Effect": "Allow",
+            "Action": ["secretsmanager:GetSecretValue"],
+            "Resource": "*"
+        }],
         "s3_bucket": "zappa-workout-dev",
         "domain": "dev.themcilroy.com",
         "route53_enabled": true,
