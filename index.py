@@ -6,7 +6,11 @@ from flask_wtf.csrf import CSRFProtect
 from forms import RegistrationForm, LoginForm, MaxesForm
 from utils import get_secret_key
 
-
+""" Flask dyanmo is imported.
+Need to get local DB working.
+flask-dynamo: http://flask-dynamo.readthedocs.io/en/latest/quickstart.html
+local: https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DynamoDBLocal.html
+"""
 
 app = Flask(__name__)
 
