@@ -1,6 +1,7 @@
 import os
 
 from flask import Flask, render_template, request, url_for, flash, redirect, session
+from flask_dynamo import Dynamo
 from flask_wtf.csrf import CSRFProtect
 from forms import RegistrationForm, LoginForm, MaxesForm
 from utils import get_secret_key
