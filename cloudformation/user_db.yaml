@@ -17,10 +17,10 @@ Resources:
     Properties: 
       TableName: !Sub '${userTablePrefix}-WorkoutGenerator-Users'
       AttributeDefinitions: 
-        - AttributeName: userId
+        - AttributeName: userName
           AttributeType: S
       KeySchema: 
-        - AttributeName: userId
+        - AttributeName: userName
           KeyType: HASH
       ProvisionedThroughput: 
         ReadCapacityUnits: 5

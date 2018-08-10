@@ -8,7 +8,8 @@
         "environment_variables": {
             "ENV_SECRET_NAME": "workoutgenerator/secretkey",
             "ENV_SECRET_KEY": "WORKOUT_GEN_KEY",
-            "ENV_REGION": "us-east-2"
+            "ENV_REGION": "us-east-2",
+            "USER_TABLE": "workoutgenerator-table-prod"
         },
         "extra_permissions": [{
             "Effect": "Allow",
@@ -29,7 +30,8 @@
         "environment_variables": {
             "ENV_SECRET_NAME": "workoutgenerator/secretkey",
             "ENV_SECRET_KEY": "WORKOUT_GEN_KEY",
-            "ENV_REGION": "us-east-2"
+            "ENV_REGION": "us-east-2",
+            "USER_TABLE": "workoutgenerator-table-dev"
         },
         "extra_permissions": [{
             "Effect": "Allow",

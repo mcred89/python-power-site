@@ -17,13 +17,21 @@ app = Flask(__name__)
 secret_name = os.getenv('ENV_SECRET_NAME')
 secret_key = os.getenv('ENV_SECRET_KEY')
 region = os.getenv('ENV_REGION')
+usertable = os.getenv('USER_TABLE')
+
+app.config['DYNAMO_TABLES'] = [
+    {
+      TableName=usertable,
+      KeySchema=[dict(AttributeName='userName', KeyType='HASH')],
+      AttributeDefinitions=[dict(AttributeName='userName', AttributeType='S')],
+      ProvisionedThroughput=dict(ReadCapacityUnits=5, WriteCapacityUnits=5)
+    }
+ ]
 
 app.config['SECRET_KEY'] = get_secret_key(secret_name, secret_key, region)
 app.secret_key = get_secret_key(secret_name, secret_key, region)
 
-print(get_secret_key(secret_name, secret_key, region))
-
-app.config['SESSION_TYPE'] = 'filesystem'
+dynamo = Dynamo(app)
 
 @app.route("/", methods=['GET', 'POST'])
 def home():
@@ -80,4 +88,7 @@ def register():
 
 
 if __name__ == "__main__":
+  app.config['DYNAMO_ENABLE_LOCAL'] = True
+  app.config['DYNAMO_LOCAL_HOST'] = 'localhost'
+  app.config['DYNAMO_LOCAL_PORT'] = 8000
   app.run(debug=True, host='127.0.0.1')
