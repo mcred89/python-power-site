@@ -1,4 +1,4 @@
 $env:ENV_SECRET_NAME = "workoutgenerator/secretkey"
 $env:ENV_SECRET_KEY = "WORKOUT_GEN_KEY"
 $env:ENV_REGION = "us-east-2"
-$evn:USER_TABLE = "workoutgenerator-table-local"
+$env:USER_TABLE = "workoutgenerator-table-local"

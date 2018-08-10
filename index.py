@@ -1,16 +1,9 @@
 import os
 
 from flask import Flask, render_template, request, url_for, flash, redirect, session
-from flask_dynamo import Dynamo
 from flask_wtf.csrf import CSRFProtect
 from forms import RegistrationForm, LoginForm, MaxesForm
 from utils import get_secret_key
-
-""" Flask dyanmo is imported.
-Need to get local DB working.
-flask-dynamo: http://flask-dynamo.readthedocs.io/en/latest/quickstart.html
-local: https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DynamoDBLocal.html
-"""
 
 app = Flask(__name__)
 
@@ -19,19 +12,8 @@ secret_key = os.getenv('ENV_SECRET_KEY')
 region = os.getenv('ENV_REGION')
 usertable = os.getenv('USER_TABLE')
 
-app.config['DYNAMO_TABLES'] = [
-    {
-      TableName=usertable,
-      KeySchema=[dict(AttributeName='userName', KeyType='HASH')],
-      AttributeDefinitions=[dict(AttributeName='userName', AttributeType='S')],
-      ProvisionedThroughput=dict(ReadCapacityUnits=5, WriteCapacityUnits=5)
-    }
- ]
-
 app.config['SECRET_KEY'] = get_secret_key(secret_name, secret_key, region)
 app.secret_key = get_secret_key(secret_name, secret_key, region)
-
-dynamo = Dynamo(app)
 
 @app.route("/", methods=['GET', 'POST'])
 def home():
@@ -88,7 +70,4 @@ def register():
 
 
 if __name__ == "__main__":
-  app.config['DYNAMO_ENABLE_LOCAL'] = True
-  app.config['DYNAMO_LOCAL_HOST'] = 'localhost'
-  app.config['DYNAMO_LOCAL_PORT'] = 8000
   app.run(debug=True, host='127.0.0.1')
