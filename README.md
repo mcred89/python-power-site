@@ -2,7 +2,8 @@
 
 ## To Do
 
-dynamo local is now working. It's just barely working. Need to test online.
+dynamo local is now working. It's just barely working. Need get working in AWS.
+Need to write instructions for dynamo local.
 
 ## Deploy to aws with Zappa
 

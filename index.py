@@ -13,6 +13,8 @@ secret_key = os.getenv('ENV_SECRET_KEY')
 region = os.getenv('ENV_REGION')
 usertable = os.getenv('USER_TABLE')
 
+db = DynamoDB(table_name=usertable)
+
 app.config['SECRET_KEY'] = get_secret_key(secret_name, secret_key, region)
 app.secret_key = get_secret_key(secret_name, secret_key, region)
 
