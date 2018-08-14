@@ -2,11 +2,9 @@
 
 ## To Do
 
-```text
-Need to either use plain dyanoDB calls or make my own calls. DynamoDB local integration preferred.
-```
+dynamo local is now working. It's just barely working. Need to test online.
 
-Deploy to aws with Zappa:
+## Deploy to aws with Zappa
 
 [Set up your aws cli](https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-getting-started.html):
 

@@ -1,9 +1,10 @@
 import os
 
+import boto3
 from flask import Flask, render_template, request, url_for, flash, redirect, session
 from flask_wtf.csrf import CSRFProtect
 from forms import RegistrationForm, LoginForm, MaxesForm
-from utils import get_secret_key
+from utils import get_secret_key, DynamoDB
 
 app = Flask(__name__)
 
@@ -53,7 +54,8 @@ def about():
 def login():
   form = LoginForm()
   if form.validate_on_submit():
-    if form.email.data == 'test@test.com' and form.password.data == 'password':
+    user = db.get_user(email=form.email.data)
+    if form.email.data == user['email'] and form.password.data == user['password']:
       flash('You have been logged in!', 'success')
       return redirect(url_for('home'))
     else:
@@ -64,10 +66,36 @@ def login():
 def register():
   form = RegistrationForm()
   if form.validate_on_submit():
-    flash(f'Account created for {form.username.data}', 'success')
+    email = form.email.data
+    password = form.password.data
+    db.create_user(email=email, password=password)
+    flash(f'Account created for {form.email.data}', 'success')
     return redirect(url_for('home'))
   return render_template('register.html', form=form)
 
 
 if __name__ == "__main__":
+  client = boto3.client('dynamodb', endpoint_url='http://localhost:8000')
+  tables = client.list_tables()
+  if 'LOCAL' not in tables['TableNames'][0]:
+    client.create_table(
+      TableName='LOCAL',
+      AttributeDefinitions=[
+        {
+          'AttributeName': 'email',
+          'AttributeType': 'S'
+        }
+      ],
+      KeySchema=[
+        {
+          'AttributeName': 'email',
+          'KeyType': 'HASH'
+        }
+      ],
+      ProvisionedThroughput={
+        'ReadCapacityUnits': 5,
+        'WriteCapacityUnits': 5
+      }
+    )
+  db = DynamoDB(table_name='LOCAL')
   app.run(debug=True, host='127.0.0.1')

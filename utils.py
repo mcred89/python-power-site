@@ -26,3 +26,44 @@ def get_secret_key(secret_name, secret_key, region):
             print("The request was invalid due to:", e)
         elif e.response['Error']['Code'] == 'InvalidParameterException':
             print("The request had invalid params:", e)
+
+class DynamoDB(object):
+
+
+    def __init__(self, table_name):
+        self.table_name = table_name
+        self.table = self.connect()
+
+
+    def connect(self):
+        if self.table_name == 'LOCAL':
+            dynamodb = boto3.resource('dynamodb',
+                aws_access_key_id="anything",
+                aws_secret_access_key="anything",
+                endpoint_url='http://localhost:8000')
+            table = dynamodb.Table(self.table_name)
+            return table
+        else:
+            dynamodb = boto3.resource('dynamodb')
+            table = dynamodb.Table(self.table_name)
+            return table
+            
+
+    def get_user(self, email):
+        response = self.table.get_item(
+            Key={
+                'email': email
+            }
+        )
+        return response.get('Item', None)
+
+
+    def create_user(self, email, password):
+        response = self.table.put_item(
+            Item={
+                'email': email,
+                'password': password
+            },
+            ConditionExpression='attribute_not_exists(email)'
+        )
+        return response
