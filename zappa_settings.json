@@ -9,7 +9,7 @@
             "ENV_SECRET_NAME": "workoutgenerator/secretkey",
             "ENV_SECRET_KEY": "WORKOUT_GEN_KEY",
             "ENV_REGION": "us-east-2",
-            "USER_TABLE": "workoutgenerator-table-prod"
+            "USER_TABLE": "prod-WorkoutGenerator-Users"
         },
         "extra_permissions": [{
             "Effect": "Allow",
@@ -31,7 +31,7 @@
             "ENV_SECRET_NAME": "workoutgenerator/secretkey",
             "ENV_SECRET_KEY": "WORKOUT_GEN_KEY",
             "ENV_REGION": "us-east-2",
-            "USER_TABLE": "workoutgenerator-table-dev"
+            "USER_TABLE": "dev-WorkoutGenerator-Users"
         },
         "extra_permissions": [{
             "Effect": "Allow",
