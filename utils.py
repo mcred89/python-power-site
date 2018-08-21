@@ -1,3 +1,4 @@
+from datetime import datetime
 import json
 
 import boto3
@@ -28,7 +29,6 @@ def get_secret_key(secret_name, secret_key, region):
             print("The request had invalid params:", e)
 
 class DynamoDB(object):
-
 
     def __init__(self, table_name):
         self.table_name = table_name
@@ -65,5 +65,24 @@ class DynamoDB(object):
                 'password': password
             },
             ConditionExpression='attribute_not_exists(email)'
+        )
+        return response
+
+    def save_lifting_info(self, email, msq, mbe, mdl, program):
+        maxes = {
+            'squat': msq,
+            'press': mbe,
+            'dead': mdl
+        }
+        saved_routine = {
+            'created': datetime.utcnow(),
+            'workout': program
+        }
+        response = self.table.put_item(
+            Item={
+                'email': email,
+                'maxes': maxes,
+                'routine': saved_routine
+            }
         )
         return response

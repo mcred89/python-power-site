@@ -8,15 +8,24 @@ from utils import get_secret_key, DynamoDB
 
 app = Flask(__name__)
 
+# Set variables for secret key retrieval from secrets manager
 secret_name = os.getenv('ENV_SECRET_NAME')
 secret_key = os.getenv('ENV_SECRET_KEY')
+# AWS region variable
 region = os.getenv('ENV_REGION')
+# Name of DyanmoDB user table
 usertable = os.getenv('USER_TABLE')
 
+# Initialize table object
 db = DynamoDB(table_name=usertable)
 
-app.config['SECRET_KEY'] = get_secret_key(secret_name, secret_key, region)
-app.secret_key = get_secret_key(secret_name, secret_key, region)
+# Get flask secret key
+if usertable == 'LOCAL':
+    app.config['SECRET_KEY'] = "123456789"
+else:
+    app.config['SECRET_KEY'] = get_secret_key(secret_name, secret_key, region)
+# Not 100% sure why this is here commenting out for now
+#    app.secret_key = get_secret_key(secret_name, secret_key, region)
 
 @app.route("/", methods=['GET', 'POST'])
 def home():
@@ -44,10 +53,6 @@ def workoutcreate():
 def calculators():
   return render_template('calculators.html')
 
-@app.route("/otherprograms")
-def otherprograms():
-  return render_template('otherprograms.html')
-
 @app.route("/about")
 def about():
   return render_template('about.html')
@@ -64,6 +69,10 @@ def login():
       flash('Login Failed', 'danger')
   return render_template('login.html', form=form)
 
+@app.route("/myprogram")
+def myprogram():
+  return render_template('myprogram.html')
+
 @app.route("/register", methods=['GET', 'POST'])
 def register():
   form = RegistrationForm()
@@ -77,8 +86,10 @@ def register():
 
 
 if __name__ == "__main__":
+  # Configure for DynamoDB local
   client = boto3.client('dynamodb', endpoint_url='http://localhost:8000')
   tables = client.list_tables()
+  # Create table if it doesn't exist
   if 'LOCAL' not in tables['TableNames'][0]:
     client.create_table(
       TableName='LOCAL',
@@ -99,5 +110,4 @@ if __name__ == "__main__":
         'WriteCapacityUnits': 5
       }
     )
-  db = DynamoDB(table_name='LOCAL')
   app.run(debug=True, host='127.0.0.1')
