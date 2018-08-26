@@ -2,9 +2,9 @@
 
 This is a demo site that uses python, flask, and zappa to create a serverless web application. The site utilizes DynamoDB, Lambda, API Gateway, Route53, AWS Certificate Manager, and Secrets Manager.
 
-This site costs ~$0.50/mo in Route53 hosting, but otherwise stays within the AWS free tier. 
+This site costs ~$0.50/mo in Route53 hosting, but otherwise stays within the AWS free tier.
 
-# Walkthrough
+## Walkthrough
 
 If you want to download and use the site on your own (or just gut the site proper and use the skeleton as your own), you need to set up DynamoDB local, a few things in AWS, and Zappa.
 
@@ -83,7 +83,7 @@ pipenv install
 
 ## Deploy to aws with Zappa
 
-- Deploy or update the site. Note that the final name is referencing the top level enrionment names in zappa_settings.json:
+1. How to deploy or update the site:
 
 ```bash
 cd /project/dir
@@ -92,11 +92,13 @@ zappa deploy dev
 zappa update dev
 ```
 
-Deploy your DNS and cert (this takes awhile to propigate):
-> zappa certify prod
+- Note that the `dev` arguemnt in the commands is referencing the top level enrionment names in zappa_settings.json:
+
+2. Deploy your DNS and cert (this takes awhile to propigate):
+> zappa certify dev
 
 Tear it all down with:
-> zappa undeploy
+> zappa undeploy dev
 
 ## Local Development
 
@@ -110,4 +112,6 @@ python ./run.py
 
 - Navigate to `http://127.0.0.1:5000/` in your browser
 
-The site in action: [The McIlroy](https://themcilroy.com/)
+## The site in action
+
+[The McIlroy](https://themcilroy.com/)
