@@ -1,4 +1,6 @@
 
+import os
+
 import boto3
 
 from workoutgenerator import app
@@ -27,5 +29,7 @@ if __name__ == "__main__":
         'ReadCapacityUnits': 5,
         'WriteCapacityUnits': 5
       }
-    )
+    )  
+  os.environ["ENV_REGION"] = "us-east-2"
+  os.environ["USER_TABLE"] = "LOCAL"
   app.run(debug=True, host='127.0.0.1')
