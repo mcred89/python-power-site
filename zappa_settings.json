@@ -1,6 +1,6 @@
 {
     "prod": {
-        "app_function": "index.app",
+        "app_function": "run.app",
         "aws_region": "us-east-2",
         "profile_name": null,
         "project_name": "workoutgenerator",
@@ -22,7 +22,7 @@
         "certificate_arn": "arn:aws:acm:us-east-1:824269988929:certificate/fdc01f6c-be49-40b3-afb7-707d085d1042"
     },
     "dev": {
-        "app_function": "index.app",
+        "app_function": "run.app",
         "aws_region": "us-east-2",
         "profile_name": null,
         "project_name": "workoutgenerator",
