@@ -97,12 +97,12 @@ I've already configured the app (in run.py) to create DB named 'LOCAL' and use i
 2. Deploy your DNS and cert (this takes awhile to propigate):
     > zappa certify dev
 
-Tear it all down with:
+3. Tear it all down with:
     > zappa undeploy dev
 
 ## Local Development
 
-    - Assuming your DynamoDB local table is already running:
+- Assuming your DynamoDB local table is already running:
 
     ```bash
     cd /project/dir
@@ -110,7 +110,7 @@ Tear it all down with:
     python ./run.py
     ```
 
-    - Navigate to `http://127.0.0.1:5000/` in your browser
+- Navigate to `http://127.0.0.1:5000/` in your browser
 
 ## The site in action
 
