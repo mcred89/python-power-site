@@ -47,7 +47,6 @@ class DynamoDB(object):
             dynamodb = boto3.resource('dynamodb')
             table = dynamodb.Table(self.table_name)
             return table
-            
 
     def get_user(self, email):
         response = self.table.get_item(

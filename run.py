@@ -3,8 +3,6 @@ import os
 
 import boto3
 
-from workoutgenerator import app
-
 if __name__ == "__main__":
   # Configure for DynamoDB local
   client = boto3.client('dynamodb', endpoint_url='http://localhost:8000')
@@ -32,4 +30,7 @@ if __name__ == "__main__":
     )  
   os.environ["ENV_REGION"] = "us-east-2"
   os.environ["USER_TABLE"] = "LOCAL"
+  from workoutgenerator import app
   app.run(debug=True, host='127.0.0.1')
+
+from workoutgenerator import app
