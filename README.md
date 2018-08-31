@@ -1,6 +1,14 @@
 # WorkoutGenerator
 
-Deploy to aws with Zappa:
+**NOTE** 
+I started trying to push what I could do with zappa and flask on this site. User auth, while possible to manage, is impractical with this site model. You can see what type of progress I made on the develop branch of this repo.
+
+I've been wanting to learn JS; AWS Amplify and the serverless framework in particular.
+I will be converting this site to JS and keeping this repo around as an archive.
+
+If you'd like to see the type of (neat, although simple) site that this repo is capable of producing, continue on.
+
+## Deploy to aws with Zappa:
 
 [Set up your aws cli](https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-getting-started.html):
 > pip install awscli
