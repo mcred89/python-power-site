@@ -3,11 +3,42 @@
         "app_function": "index.app",
         "aws_region": "us-east-2",
         "profile_name": null,
-        "project_name": "workoutgenerato",
+        "project_name": "workoutgenerator",
         "runtime": "python3.6",
-        "s3_bucket": "zappa-gq2z2bk0u",
+        "environment_variables": {
+            "ENV_SECRET_NAME": "workoutgenerator/secretkey",
+            "ENV_SECRET_KEY": "WORKOUT_GEN_KEY",
+            "ENV_REGION": "us-east-2"
+        },
+        "extra_permissions": [{
+            "Effect": "Allow",
+            "Action": ["secretsmanager:GetSecretValue"],
+            "Resource": "*"
+        }],
+        "s3_bucket": "zappa-workout-prod",
         "domain": "themcilroy.com",
         "route53_enabled": true,
-        "certificate_arn": "arn:aws:acm:us-east-1:824269988929:certificate/a029b88f-a7f8-40a4-bd09-3a49787d4c73"
+        "certificate_arn": "arn:aws:acm:us-east-1:824269988929:certificate/fdc01f6c-be49-40b3-afb7-707d085d1042"
+    },
+    "dev": {
+        "app_function": "index.app",
+        "aws_region": "us-east-2",
+        "profile_name": null,
+        "project_name": "workoutgenerator",
+        "runtime": "python3.6",
+        "environment_variables": {
+            "ENV_SECRET_NAME": "workoutgenerator/secretkey",
+            "ENV_SECRET_KEY": "WORKOUT_GEN_KEY",
+            "ENV_REGION": "us-east-2"
+        },
+        "extra_permissions": [{
+            "Effect": "Allow",
+            "Action": ["secretsmanager:GetSecretValue"],
+            "Resource": "*"
+        }],
+        "s3_bucket": "zappa-workout-dev",
+        "domain": "dev.themcilroy.com",
+        "route53_enabled": true,
+        "certificate_arn": "arn:aws:acm:us-east-1:824269988929:certificate/fdc01f6c-be49-40b3-afb7-707d085d1042"
     }
 }
