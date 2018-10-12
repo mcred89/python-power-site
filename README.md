@@ -16,12 +16,13 @@ If you'd like to see the type of (neat, although simple) site that this repo is 
 > aws config
 
 Set up your virtual environemnt:
-> pip install pipenv
+> pip install virtualenv
 > cd /project/dir
-> pipenv install
+> virtualenv --python=python3 venv
 
 Deploy or update the site:
-> pipenv shell
+> source venv/bin/activate
+> pip install -r requirements.txt
 > zappa deploy prod
 > zappa update prod
 
