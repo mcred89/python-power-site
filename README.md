@@ -17,10 +17,13 @@ Set up your virtual environemnt:
 > virtualenv --python=python3 venv
 
 Deploy or update the site:
-> source venv/bin/activate
-> pip install -r requirements.txt
-> zappa deploy prod
-> zappa update prod
+
+```bash
+source venv/bin/activate
+pip install -r requirements.txt
+zappa deploy prod
+zappa update prod
+```
 
 Deploy under your [Route53](https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/getting-started.html) domain and [ACM](https://docs.aws.amazon.com/acm/latest/userguide/gs-acm-request-public.html) cert:
 

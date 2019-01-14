@@ -1,6 +1,6 @@
 argcomplete==1.9.3
-boto3==1.9.22
-botocore==1.12.22
+boto3==1.9.78
+botocore==1.12.78
 certifi==2018.8.24
 cfn-flip==1.0.3
 chardet==3.0.4
@@ -31,4 +31,4 @@ Unidecode==1.0.22
 urllib3==1.23
 Werkzeug==0.14.1
 wsgi-request-logger==0.4.6
-zappa==0.47.0
+zappa==0.47.1
