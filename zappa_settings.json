@@ -8,6 +8,7 @@
         "s3_bucket": "zappa-pypower",
         "domain": "pypower.themcilroy.com",
         "route53_enabled": true,
-        "certificate_arn": "arn:aws:acm:us-east-1:824269988929:certificate/fdc01f6c-be49-40b3-afb7-707d085d1042"
+        "certificate_arn": "arn:aws:acm:us-east-1:824269988929:certificate/fdc01f6c-be49-40b3-afb7-707d085d1042",
+        "keep_warm": false
     }
 }
